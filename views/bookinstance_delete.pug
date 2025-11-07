@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Delete Book Instance
+
+  p Do you really want to delete this copy of:
+    strong #{bookinstance.book.title}?
+
+  p #[strong Imprint:] #{bookinstance.imprint}
+
+  p #[strong Status:] #{bookinstance.status}
+
+  if bookinstance.due_back
+    p #[strong Due back:] #{bookinstance.due_back}
+
+  hr
+
+  form(method='POST')
+    input(type='hidden', name='bookinstanceid', value=bookinstance._id)
+    button.btn.btn-danger(type='submit') Delete
+    a.btn.btn-secondary(href='/catalog/bookinstances') Cancel

@@ -1,0 +1,18 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET users listing. */
+
+router.get('/', function(req, res, next) {
+  res.send('Allie is the coolest!');
+});
+
+router.get('/books', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+router.get('/cool', function(req, res, next) {
+  res.send('You are so Cool!');
+});
+
+module.exports = router;
